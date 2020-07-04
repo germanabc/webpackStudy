@@ -43,7 +43,30 @@ module.exports={
             test: /\.scss$/,
             use:['style-loader','css-loader','sass-loader']
             // loaders: ['style-loader', 'css-loader', 'sass-loader']
-          }
+          },
+          // {
+             //支持各种图片，那么下载file-loader就行了
+            // test: /\.(png|svg|jpg|gif)$/,
+            // use:['file-loader'],
+            // use:[{
+            //   loader:'file-loader',
+            //   options: {
+            //     publicPath:"/"
+            //   }
+            // }]
+          // },
+           //想对图片进行复杂配置, 那么就使用url-loader
+           //url-loader底层依赖file-loader,但不需要另外安装
+          {
+            test: /\.(png|svg|jpg|gif)$/,
+            use:[{
+              "loader":'url-loader',
+              // limit表示如果图片大于2KB，就以路径形式展示，小于的话就用base64格式展示
+              options:{
+                limit: 2*1024
+              }
+            }]
+          },
         ]
     }
 }
