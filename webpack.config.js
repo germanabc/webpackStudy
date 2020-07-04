@@ -16,6 +16,9 @@ module.exports={
       open: true,
       hot: true,
     },
+    // css:{ //脚手架3可以这样配置
+    //   sourceMap:true
+    // },
     // 配置插件
     plugins:[
       new htmlWebpackPlugin({
@@ -29,6 +32,17 @@ module.exports={
           {
             test: /\.css$/,
             use:['style-loader','css-loader']
+          },
+          {
+            test: /\.less$/,
+            //use或者 loaders 两种写法都可以，推荐webpack4 use 写法
+            // use:['style-loader','css-loader','less-loader']
+            loaders: ['style-loader', 'css-loader', 'less-loader']
+          },
+          {
+            test: /\.scss$/,
+            use:['style-loader','css-loader','sass-loader']
+            // loaders: ['style-loader', 'css-loader', 'sass-loader']
           }
         ]
     }

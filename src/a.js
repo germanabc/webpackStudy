@@ -1,4 +1,8 @@
+
+import _ from 'lodash';
 import './assets/style.css';
+import './assets/bg.scss';
+import './assets/fontSize.less';
 console.log('我是a模块')
 function component() {
     var element = document.createElement('div');
@@ -6,6 +10,8 @@ function component() {
     // lodash 是由当前 script 脚本 import 导入进来的
     element.innerHTML = _.join(['Hello', 'webpack'], ' ');
 +   element.classList.add('hello');
++   element.classList.add('fontSize');
++   element.classList.add('bg');
 
     return element;
   }
