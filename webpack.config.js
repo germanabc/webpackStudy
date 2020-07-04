@@ -16,6 +16,7 @@ module.exports={
       open: true,
       hot: true,
     },
+    devtool: 'inline-source-map', //定位报错在哪一行
     // css:{ //脚手架3可以这样配置
     //   sourceMap:true
     // },

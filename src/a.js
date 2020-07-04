@@ -5,6 +5,7 @@ import './assets/bg.scss';
 import './assets/fontSize.less';
 import  Icon from './assets/icon.png';
 console.log('我是a模块')
+// cSonsole.log('我是a模块')
 function component() {
     var element = document.createElement('div');
 
